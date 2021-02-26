@@ -10,6 +10,8 @@
 		A071404125E8E7DC00951F44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071404025E8E7DC00951F44 /* AppDelegate.swift */; };
 		A071404A25E8E7DF00951F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A071404925E8E7DF00951F44 /* Assets.xcassets */; };
 		A071404D25E8E7DF00951F44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A071404B25E8E7DF00951F44 /* LaunchScreen.storyboard */; };
+		A071406B25E8EBAA00951F44 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071406A25E8EBAA00951F44 /* CoordinatorProtocol.swift */; };
+		A071406E25E8FA8000951F44 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071406D25E8FA8000951F44 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		A071404925E8E7DF00951F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A071404C25E8E7DF00951F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A071404E25E8E7DF00951F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A071406A25E8EBAA00951F44 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		A071406D25E8FA8000951F44 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A071404025E8E7DC00951F44 /* AppDelegate.swift */,
+				A071406A25E8EBAA00951F44 /* CoordinatorProtocol.swift */,
 				A071406725E8E9B600951F44 /* MainTabBarController */,
 				A071405725E8E84800951F44 /* FirstTabViewController */,
 				A071405825E8E87300951F44 /* SecondTabViewController */,
@@ -198,6 +203,7 @@
 		A071406825E8EA0900951F44 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A071406D25E8FA8000951F44 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A071406B25E8EBAA00951F44 /* CoordinatorProtocol.swift in Sources */,
+				A071406E25E8FA8000951F44 /* MainCoordinator.swift in Sources */,
 				A071404125E8E7DC00951F44 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +420,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVVMC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVVMC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
