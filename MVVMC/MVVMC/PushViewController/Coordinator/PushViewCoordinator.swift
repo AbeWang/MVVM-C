@@ -26,9 +26,14 @@ class PushViewCoordinator {
 extension PushViewCoordinator: CoordinatorProtocol {
     func start() {
         let viewController = PushViewController()
-        #warning("TODO: Handle dismiss")
-//        viewController.coordinatorDelegate = self
+        viewController.coordinatorDelegate = self
         viewController.viewModel.parameters = parameters
         navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+extension PushViewCoordinator: PushViewControllerCoordinatorDelegate {
+    func popView() {
+        coordinatorDelegate?.requestDismissal()
     }
 }
