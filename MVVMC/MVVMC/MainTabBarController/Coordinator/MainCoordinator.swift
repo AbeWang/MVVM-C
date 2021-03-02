@@ -24,7 +24,13 @@ extension MainCoordinator {
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([firstTabNaviController, secondTabNaviController], animated: false)
         
-        #warning("TODO FirstViewCoordinator, SecondViewCoordinator")
+        let firstCoordinator = FirstTabViewCoordinator(navigationController: firstTabNaviController)
+        coordinators.append(firstCoordinator)
+        firstCoordinator.start()
+        
+        let secondCoordinator = SecondTabViewCoordinator(navigationController: secondTabNaviController)
+        coordinators.append(secondCoordinator)
+        secondCoordinator.start()
         
         window.rootViewController = tabBarController
     }

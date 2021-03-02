@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+class FirstTabViewModel {
+    var title: String? {
+        didSet {
+            titleDidChangedCallback?(title)
+        }
+    }
+    
+    // Observation callbacks
+    var titleDidChangedCallback: ((String?) -> Void)?
+    
+    init() {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) { [weak self] in
+            self?.title = "First View"
+        }
+    }
+}
