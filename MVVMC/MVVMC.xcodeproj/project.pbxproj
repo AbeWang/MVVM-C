@@ -18,6 +18,9 @@
 		A071407C25E90B2900951F44 /* SecondTabViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071407B25E90B2900951F44 /* SecondTabViewCoordinator.swift */; };
 		A071407F25E90B4200951F44 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071407E25E90B4200951F44 /* SecondTabViewController.swift */; };
 		A071408225E90B5C00951F44 /* SecondTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071408125E90B5C00951F44 /* SecondTabViewModel.swift */; };
+		A071408B25EE2ED300951F44 /* PushViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071408A25EE2ED300951F44 /* PushViewCoordinator.swift */; };
+		A071408E25EE2EEF00951F44 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071408D25EE2EEF00951F44 /* PushViewController.swift */; };
+		A071409125EE2F0100951F44 /* PushViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071409025EE2F0100951F44 /* PushViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		A071407B25E90B2900951F44 /* SecondTabViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewCoordinator.swift; sourceTree = "<group>"; };
 		A071407E25E90B4200951F44 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		A071408125E90B5C00951F44 /* SecondTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewModel.swift; sourceTree = "<group>"; };
+		A071408A25EE2ED300951F44 /* PushViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewCoordinator.swift; sourceTree = "<group>"; };
+		A071408D25EE2EEF00951F44 /* PushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
+		A071409025EE2F0100951F44 /* PushViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 		A071406125E8E96D00951F44 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A071409025EE2F0100951F44 /* PushViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 		A071406225E8E97900951F44 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A071408D25EE2EEF00951F44 /* PushViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 		A071406325E8E97E00951F44 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A071408A25EE2ED300951F44 /* PushViewCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -296,13 +305,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A071406B25E8EBAA00951F44 /* CoordinatorProtocol.swift in Sources */,
+				A071408B25EE2ED300951F44 /* PushViewCoordinator.swift in Sources */,
 				A071407925E90B0900951F44 /* FirstTabViewModel.swift in Sources */,
 				A071407F25E90B4200951F44 /* SecondTabViewController.swift in Sources */,
 				A071407625E90AEE00951F44 /* FirstTabViewController.swift in Sources */,
 				A071408225E90B5C00951F44 /* SecondTabViewModel.swift in Sources */,
 				A071407C25E90B2900951F44 /* SecondTabViewCoordinator.swift in Sources */,
 				A071406E25E8FA8000951F44 /* MainCoordinator.swift in Sources */,
+				A071408E25EE2EEF00951F44 /* PushViewController.swift in Sources */,
 				A071407325E90ACA00951F44 /* FirstTabViewCoordinator.swift in Sources */,
+				A071409125EE2F0100951F44 /* PushViewModel.swift in Sources */,
 				A071404125E8E7DC00951F44 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

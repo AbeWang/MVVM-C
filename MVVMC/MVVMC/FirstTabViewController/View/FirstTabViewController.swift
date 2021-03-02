@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol FirstTabViewControllerCoordinatorDelegate: class {
+    func pushView(withParameters: [String: Any]?)
+}
+
 class FirstTabViewController: UIViewController {
     let viewModel = FirstTabViewModel()
+    weak var coordinatorDelegate: FirstTabViewControllerCoordinatorDelegate?
     
     private let text: UILabel = {
         let label = UILabel()
@@ -25,6 +30,7 @@ class FirstTabViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Push View", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.backgroundColor = UIColor.black.cgColor
         button.layer.cornerRadius = 5
@@ -57,6 +63,17 @@ class FirstTabViewController: UIViewController {
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: text, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
         ])
+    }
+}
+
+// Action
+extension FirstTabViewController {
+    @objc private func buttonPressed() {
+        let parameters: [String: Any] = [
+            "data1": "abe",
+            "data2": "hi hi"
+        ]
+        coordinatorDelegate?.pushView(withParameters: parameters)
     }
 }
 
