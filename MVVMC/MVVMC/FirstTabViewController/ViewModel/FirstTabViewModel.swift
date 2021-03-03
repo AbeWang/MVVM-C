@@ -18,7 +18,8 @@ class FirstTabViewModel {
     var titleDidChangedCallback: ((String?) -> Void)?
     
     init() {
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) { [weak self] in
+        // Mock binding
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.3) { [weak self] in
             self?.title = "First View"
         }
     }

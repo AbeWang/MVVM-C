@@ -39,7 +39,7 @@ class SecondTabViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        handleObservation()
+        handleDataBinding()
     }
     
     required init?(coder: NSCoder) {
@@ -70,20 +70,19 @@ class SecondTabViewController: UIViewController {
 extension SecondTabViewController {
     @objc func buttonPressed() {
         let parameters: [String: Any] = [
-            "data1": "wow",
-            "data2": "cool"
+            "name": "abewang",
+            "info": "cool"
         ]
         coordinatorDelegate?.presentView(withParameters: parameters)
     }
 }
 
-// Observation
+// Data binding
 extension SecondTabViewController {
-    private func handleObservation() {
+    private func handleDataBinding() {
         viewModel.titleDidChangedCallback = { [weak self] value in
             self?.text.text = "\(value ?? "") Tab"
             self?.title = value
         }
     }
 }
-

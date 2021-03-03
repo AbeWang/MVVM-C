@@ -18,6 +18,7 @@ class SecondTabViewModel {
     var titleDidChangedCallback: ((String?) -> Void)?
     
     init() {
+        // Mock binding
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) { [weak self] in
             self?.title = "Second View"
         }

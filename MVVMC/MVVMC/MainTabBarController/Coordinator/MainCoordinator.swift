@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCoordinator: CoordinatorProtocol {
+class MainCoordinator {
     let window: UIWindow
     var coordinators: [CoordinatorProtocol] = []
     
@@ -16,7 +16,7 @@ class MainCoordinator: CoordinatorProtocol {
     }
 }
 
-extension MainCoordinator {
+extension MainCoordinator: CoordinatorProtocol {
     func start() {
         let firstTabNaviController = createTabBarItemNavigationController(withTitle: "First")
         let secondTabNaviController = createTabBarItemNavigationController(withTitle: "Second")
@@ -25,13 +25,12 @@ extension MainCoordinator {
         tabBarController.setViewControllers([firstTabNaviController, secondTabNaviController], animated: false)
         
         let firstCoordinator = FirstTabViewCoordinator(navigationController: firstTabNaviController)
-        coordinators.append(firstCoordinator)
-        firstCoordinator.start()
-        
         let secondCoordinator = SecondTabViewCoordinator(navigationController: secondTabNaviController)
-        coordinators.append(secondCoordinator)
+        firstCoordinator.start()
         secondCoordinator.start()
         
+        coordinators.append(firstCoordinator)
+        coordinators.append(secondCoordinator)
         window.rootViewController = tabBarController
     }
 }
