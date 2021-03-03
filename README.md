@@ -1,2 +1,2 @@
 # MVVM-C
-MVVM-C Swift Sample
+Sample iOS app in Swift presenting usage of MVVM-C pattern.
