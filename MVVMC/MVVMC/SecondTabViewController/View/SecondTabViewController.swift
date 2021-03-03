@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol SecondTabViewControllerCoordinatorDelegate: class {
+    func presentView(withParameters: [String: Any]?)
+}
+
 class SecondTabViewController: UIViewController {
     let viewModel = SecondTabViewModel()
+    weak var coordinatorDelegate: SecondTabViewControllerCoordinatorDelegate?
     
     private let text: UILabel = {
         let label = UILabel()
@@ -25,6 +30,7 @@ class SecondTabViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Present View", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.backgroundColor = UIColor.black.cgColor
         button.layer.cornerRadius = 5
@@ -60,11 +66,22 @@ class SecondTabViewController: UIViewController {
     }
 }
 
+// Action
+extension SecondTabViewController {
+    @objc func buttonPressed() {
+        let parameters: [String: Any] = [
+            "data1": "wow",
+            "data2": "cool"
+        ]
+        coordinatorDelegate?.presentView(withParameters: parameters)
+    }
+}
+
 // Observation
 extension SecondTabViewController {
     private func handleObservation() {
         viewModel.titleDidChangedCallback = { [weak self] value in
-            self?.text.text = "\(value ?? "") Tab View"
+            self?.text.text = "\(value ?? "") Tab"
             self?.title = value
         }
     }

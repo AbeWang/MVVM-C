@@ -81,7 +81,7 @@ extension FirstTabViewController {
 extension FirstTabViewController {
     private func handleObservation() {
         viewModel.titleDidChangedCallback = { [weak self] value in
-            self?.text.text = "\(value ?? "") Tab View"
+            self?.text.text = "\(value ?? "") Tab"
             self?.title = value
         }
     }

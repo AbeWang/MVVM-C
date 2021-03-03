@@ -1,24 +1,24 @@
 //
-//  PushViewController.swift
+//  PresentViewController.swift
 //  MVVMC
 //
-//  Created by Abe Wang on 2021/3/2.
+//  Created by Abe Wang on 2021/3/3.
 //
 
 import UIKit
 
-protocol PushViewControllerCoordinatorDelegate: class {
-    func popView()
+protocol PresentViewControllerCoordinatorDelegate: class {
+    func dismissView()
 }
 
-class PushViewController: UIViewController {
-    let viewModel = PushViewModel()
-    weak var coordinatorDelegate: PushViewControllerCoordinatorDelegate?
+class PresentViewController: UIViewController {
+    let viewModel = PresentViewModel()
+    weak var coordinatorDelegate: PresentViewControllerCoordinatorDelegate?
     
     private let button: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Pop View", for: .normal)
+        button.setTitle("Dismiss View", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.layer.borderWidth = 1
@@ -30,7 +30,7 @@ class PushViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         view.addSubview(button)
         
         let views: [String: Any] = [
@@ -44,8 +44,8 @@ class PushViewController: UIViewController {
 }
 
 // Action
-extension PushViewController {
+extension PresentViewController {
     @objc func buttonPressed() {
-        coordinatorDelegate?.popView()
+        coordinatorDelegate?.dismissView()
     }
 }
